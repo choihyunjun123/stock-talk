@@ -10,7 +10,6 @@ allprojects {
     }
 }
 
-
 subprojects {
     group = 'springspa'
     version = '1.0-SNAPSHOT'
