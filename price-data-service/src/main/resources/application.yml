@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    generate-ddl: true
+    open-in-view: true
+    properties:
+      hibernate:
+        ddl-auto: create
+        format_sql: true
+      show-sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:mysql://db:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=false
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver

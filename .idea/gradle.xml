@@ -10,7 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/authentication-service" />
             <option value="$PROJECT_DIR$/discussion-board-service" />
-            <option value="$PROJECT_DIR$/price-date-service" />
+            <option value="$PROJECT_DIR$/price-data-service" />
             <option value="$PROJECT_DIR$/stock-service" />
           </set>
         </option>
