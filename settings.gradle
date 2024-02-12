@@ -1,2 +1,6 @@
 rootProject.name = 'stock-talk'
+include 'stock-service'
+include 'price-date-service'
+include 'discussion-board-service'
+include 'authentication-service'
 
