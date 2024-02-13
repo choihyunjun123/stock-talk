@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;이메일 인증 기능 추가&quot;">
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;주가 종목 저장 기능 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/springspa/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/springspa/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,7 @@
       <workItem from="1707728544579" duration="7427000" />
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
-      <workItem from="1707782947053" duration="21574000" />
+      <workItem from="1707782947053" duration="22484000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -307,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707802071254</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Feat: &quot;주가 종목 저장 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707812838473</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707812838473</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +339,7 @@
     <MESSAGE value="Feat: &quot;users 기본 설정&quot;" />
     <MESSAGE value="Feat: &quot;회원가입 기능 추가&quot;" />
     <MESSAGE value="Feat: &quot;이메일 인증 기능 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;이메일 인증 기능 추가&quot;" />
+    <MESSAGE value="Feat: &quot;주가 종목 저장 기능 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;주가 종목 저장 기능 추가&quot;" />
   </component>
 </project>

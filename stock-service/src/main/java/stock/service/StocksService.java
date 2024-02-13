@@ -7,10 +7,12 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.repository.StocksRepository;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDateTime;
 
@@ -24,14 +26,13 @@ public class StocksService {
         this.stocksRepository = stocksRepository;
     }
 
+    @Transactional
     // 엑셀 파일 데이터 저장
-    public void uploadExcelFile(MultipartFile file, int type) {
-        try (InputStream in = file.getInputStream();
-             Workbook workbook = new XSSFWorkbook(in)) {
-            processSheet(workbook.getSheetAt(0), type);
-        } catch (Exception e) {
-            System.err.println("Error reading excel file: " + e.getMessage());
-        }
+    public boolean uploadExcelFile(MultipartFile file, int type) throws IOException {
+        InputStream in = file.getInputStream();
+        Workbook workbook = new XSSFWorkbook(in);
+        processSheet(workbook.getSheetAt(0), type);
+        return true;
     }
 
     // 시작 페이지
