@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;주가 종목 저장 기능 추가&quot;">
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;주가 종목 성공 실패 표시 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/springspa/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/springspa/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/repository/StocksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/repository/StocksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,14 +53,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -72,26 +78,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "C:/Project/Intellij/stock-talk",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project/Intellij/stock-talk&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Project\Intellij\stock-talk\stock-service\src\main\resources" />
@@ -118,7 +124,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.stock-talk:stock-service [build]">
+  <component name="RunManager">
     <configuration name="stock-talk:discussion-board-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -198,6 +204,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application (6)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stock-talk.price-data-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="price.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="stock-talk.discussion-board-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="springspa.Application" />
@@ -223,7 +236,8 @@
       <workItem from="1707728544579" duration="7427000" />
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
-      <workItem from="1707782947053" duration="22484000" />
+      <workItem from="1707782947053" duration="23258000" />
+      <workItem from="1707820788926" duration="9161000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -313,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707812838473</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Feat: &quot;주가 종목 성공 실패 표시 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707813340462</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707813340462</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +362,7 @@
     <MESSAGE value="Feat: &quot;회원가입 기능 추가&quot;" />
     <MESSAGE value="Feat: &quot;이메일 인증 기능 추가&quot;" />
     <MESSAGE value="Feat: &quot;주가 종목 저장 기능 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;주가 종목 저장 기능 추가&quot;" />
+    <MESSAGE value="Feat: &quot;주가 종목 성공 실패 표시 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;주가 종목 성공 실패 표시 추가&quot;" />
   </component>
 </project>

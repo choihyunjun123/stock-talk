@@ -38,7 +38,7 @@ public class StocksService {
     // 시작 페이지
     private void processSheet(Sheet sheet, int type) {
         for (Row row : sheet) {
-            if (row.getRowNum() == 0) continue; // 헤더 라인 스킵
+            if (row.getRowNum() == 0) continue;
             parseRow(row, type);
         }
     }
