@@ -1,9 +1,7 @@
 package price.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import price.service.PriceService;
 
 import java.io.IOException;
@@ -23,7 +21,7 @@ public class PriceController {
         return success ? ResponseEntity.ok(responseMessage) : ResponseEntity.badRequest().body(responseMessage);
     }
 
-    @PostMapping("/save")
+    @GetMapping("/save-price-data")
     private ResponseEntity<String> test() throws IOException {
         boolean success = priceService.crawl();
         return buildResponse(success, success ? "성공" : "실패");
