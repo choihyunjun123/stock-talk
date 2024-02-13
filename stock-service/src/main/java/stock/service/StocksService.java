@@ -23,6 +23,11 @@ public class StocksService {
 
     private final StocksRepository stocksRepository;
 
+    private static final int COLUMN_INDEX_NAME = 0;
+    private static final int COLUMN_INDEX_CODE = 1;
+    private static final int COLUMN_INDEX_CEO = 6;
+    private static final int COLUMN_INDEX_PLACE = 8;
+
     @Autowired
     public StocksService(StocksRepository stocksRepository) {
         this.stocksRepository = stocksRepository;
@@ -52,16 +57,16 @@ public class StocksService {
         stocks.setMarketType(type);
         for (Cell cell : row) {
             switch (cell.getColumnIndex()) {
-                case 0:
+                case COLUMN_INDEX_NAME:
                     stocks.setName(cell.getStringCellValue());
                     break;
-                case 1:
+                case COLUMN_INDEX_CODE:
                     stocks.setCode(cell.getStringCellValue());
                     break;
-                case 6:
+                case COLUMN_INDEX_CEO:
                     stocks.setCeo(cell.getStringCellValue());
                     break;
-                case 8:
+                case COLUMN_INDEX_PLACE:
                     stocks.setPlace(cell.getStringCellValue());
                     break;
                 default:

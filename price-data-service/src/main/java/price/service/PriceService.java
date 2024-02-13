@@ -21,12 +21,18 @@ import java.util.List;
 @Service
 public class PriceService {
 
-    private final String initialCrawlDataCount  = "10";
-
-    private final String scheduledCrawlDataCount  = "1";
-
     private final PriceRepository priceRepository;
     private final PriceClient priceClient;
+
+    private static final String INITIAL_CRAWL_DATA_COUNT = "10";
+    private static final String SCHEDULED_CRAWL_DATA_COUNT = "1";
+
+    private static final int DATA_INDEX_DATE = 0;
+    private static final int DATA_INDEX_OPEN = 1;
+    private static final int DATA_INDEX_HIGH = 2;
+    private static final int DATA_INDEX_LOW = 3;
+    private static final int DATA_INDEX_CLOSE = 4;
+    private static final int DATA_INDEX_VOLUME = 5;
 
     @Autowired
     public PriceService(PriceRepository priceRepository, PriceClient priceClient) {
@@ -50,7 +56,7 @@ public class PriceService {
     }
 
     private void processCode(CodesResponse code, boolean initialCrawl) {
-        String countParam = initialCrawl ? initialCrawlDataCount  : scheduledCrawlDataCount ;
+        String countParam = initialCrawl ? INITIAL_CRAWL_DATA_COUNT : SCHEDULED_CRAWL_DATA_COUNT;
         String url = String.format("https://fchart.stock.naver.com/sise.nhn?symbol=%s&timeframe=day&count=%s&requestType=0", code.getCode(), countParam);
         try {
             Document document = Jsoup.connect(url).get();
@@ -68,16 +74,16 @@ public class PriceService {
         if (initialCrawl) {
             price = new Price();
             price.setStockCode(stockCode);
-            price.setDate(LocalDate.parse(data[0], formatter));
+            price.setDate(LocalDate.parse(data[DATA_INDEX_DATE], formatter));
         } else {
-            price = priceRepository.findByStockCodeAndDate(stockCode, LocalDate.parse(data[0], formatter))
+            price = priceRepository.findByStockCodeAndDate(stockCode, LocalDate.parse(data[DATA_INDEX_DATE], formatter))
                     .orElse(new Price());
         }
-        price.setOpen(Long.valueOf(data[1]));
-        price.setHigh(Long.valueOf(data[2]));
-        price.setLow(Long.valueOf(data[3]));
-        price.setClose(Long.valueOf(data[4]));
-        price.setVolume(Long.valueOf(data[5]));
+        price.setOpen(Long.valueOf(data[DATA_INDEX_OPEN]));
+        price.setHigh(Long.valueOf(data[DATA_INDEX_HIGH]));
+        price.setLow(Long.valueOf(data[DATA_INDEX_LOW]));
+        price.setClose(Long.valueOf(data[DATA_INDEX_CLOSE]));
+        price.setVolume(Long.valueOf(data[DATA_INDEX_VOLUME]));
         price.setCreatedAt(LocalDateTime.now());
         priceRepository.save(price);
     }

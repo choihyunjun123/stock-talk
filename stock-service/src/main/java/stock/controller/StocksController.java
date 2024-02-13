@@ -1,6 +1,5 @@
 package stock.controller;
 
-import lombok.Getter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,7 +25,7 @@ public class StocksController {
     }
 
     @PostMapping("/excel-upload")
-    public ResponseEntity<String> uploadExcelFile(@RequestParam("file")MultipartFile file, @RequestParam("type") int type) throws IOException {
+    public ResponseEntity<String> uploadExcelFile(@RequestParam("file") MultipartFile file, @RequestParam("type") int type) throws IOException {
         boolean success = stocksService.uploadExcelFile(file, type);
         return buildResponse(success, success ? "성공" : "실패");
     }
