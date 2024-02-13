@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.repository.StocksRepository;
+import stock.repository.projection.StockCodeProjection;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class StocksService {
@@ -67,5 +69,10 @@ public class StocksService {
             }
         }
         stocksRepository.save(stocks);
+    }
+
+    // 상장코드 리스트
+    public List<StockCodeProjection> findAllStockCodes() {
+        return stocksRepository.findAllProjectedByStatus(true);
     }
 }
