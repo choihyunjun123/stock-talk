@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;회원가입 기능 추가&quot;">
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;이메일 인증 기능 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +215,7 @@
       <workItem from="1707728544579" duration="7427000" />
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
-      <workItem from="1707782947053" duration="11503000" />
+      <workItem from="1707782947053" duration="12793000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -283,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707794837564</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Feat: &quot;이메일 인증 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707800641056</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707800641056</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +314,7 @@
     <MESSAGE value="Refactor: &quot;모듈 이름 수정&quot;" />
     <MESSAGE value="Feat: &quot;users 기본 설정&quot;" />
     <MESSAGE value="Feat: &quot;회원가입 기능 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;회원가입 기능 추가&quot;" />
+    <MESSAGE value="Feat: &quot;이메일 인증 기능 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;이메일 인증 기능 추가&quot;" />
   </component>
 </project>

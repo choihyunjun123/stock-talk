@@ -1,7 +1,6 @@
 package authentication.users.service;
 
 import authentication.users.domain.Users;
-import authentication.users.dto.EmailCheckRequest;
 import authentication.users.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
