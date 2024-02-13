@@ -19,6 +19,9 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name", nullable = false)
+    private String name;
+
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -27,6 +30,12 @@ public class Users {
 
     @Column(name = "role", nullable = false)
     private String role;
+
+    @Column(name = "email_check_token", nullable = false)
+    private String emailCheckToken;
+
+    @Column(name = "email_verified", nullable = false)
+    private boolean emailVerified;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
