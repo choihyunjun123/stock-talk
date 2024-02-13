@@ -1,13 +1,11 @@
 package authentication.users.controller;
 
 import authentication.users.domain.Users;
+import authentication.users.dto.EmailCheckRequest;
 import authentication.users.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -29,5 +27,11 @@ public class UsersController {
     public ResponseEntity<String> register(@RequestBody Users users) {
         boolean success = usersService.register(users);
         return buildResponse(success, success ? "성공" : "이메일이 이미 사용 중입니다.");
+    }
+
+    @GetMapping("/check/email")
+    public ResponseEntity<String> checkEmailToken(EmailCheckRequest emailCheckRequest) {
+        boolean success = usersService.verifyEmail(emailCheckRequest.getEmail(), emailCheckRequest.getToken());
+        return buildResponse(success, success ? "성공" : "실패");
     }
 }

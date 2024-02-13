@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;users 기본 설정&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;회원가입 기능 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/domain/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/domain/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" afterDir="false" />
     </list>
@@ -61,6 +59,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -88,6 +89,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -215,7 +217,7 @@
       <workItem from="1707728544579" duration="7427000" />
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
-      <workItem from="1707782947053" duration="5480000" />
+      <workItem from="1707782947053" duration="11503000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -273,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707739007799</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Feat: &quot;회원가입 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707794837564</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707794837564</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +307,7 @@
     <MESSAGE value="Feat: &quot;Users 기본 설정&quot;" />
     <MESSAGE value="Refactor: &quot;모듈 이름 수정&quot;" />
     <MESSAGE value="Feat: &quot;users 기본 설정&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;users 기본 설정&quot;" />
+    <MESSAGE value="Feat: &quot;회원가입 기능 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;회원가입 기능 추가&quot;" />
   </component>
 </project>

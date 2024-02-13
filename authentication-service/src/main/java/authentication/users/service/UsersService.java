@@ -1,6 +1,7 @@
 package authentication.users.service;
 
 import authentication.users.domain.Users;
+import authentication.users.dto.EmailCheckRequest;
 import authentication.users.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,7 +36,7 @@ public class UsersService {
 
     // 이메일 중복 확인
     public boolean isEmailAlreadyUsed(String email) {
-        return usersRepository.findByEmailAndStatus(email, true) != null;
+        return usersRepository.findByEmailAndStatus(email, true).isPresent();
     }
 
     // 회원가입 준비과정
@@ -61,5 +62,17 @@ public class UsersService {
     private void setUserStatusAndTimestamp(Users users) {
         users.setStatus(true);
         users.setCreatedAt(LocalDateTime.now());
+    }
+
+    // 이메일 인증
+    public boolean verifyEmail(String email, String token) {
+        return usersRepository.findByEmail(email)
+                .filter(user -> user.getEmailCheckToken().equals(token))
+                .map(user -> {
+                    user.setEmailVerified(true);
+                    usersRepository.save(user);
+                    return true;
+                })
+                .orElse(false);
     }
 }
