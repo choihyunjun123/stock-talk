@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;이메일 인증 기능 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/springspa/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/springspa/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +51,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -190,8 +193,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="Application (5)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="stock-talk.stock-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="stock.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stock-talk.discussion-board-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="springspa.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -215,7 +225,7 @@
       <workItem from="1707728544579" duration="7427000" />
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
-      <workItem from="1707782947053" duration="12793000" />
+      <workItem from="1707782947053" duration="21574000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -289,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707800641056</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Feat: &quot;이메일 인증 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707802071254</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707802071254</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

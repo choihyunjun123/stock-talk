@@ -29,7 +29,7 @@ public class UsersController {
         return buildResponse(success, success ? "성공" : "이메일이 이미 사용 중입니다.");
     }
 
-    @GetMapping("/check/email")
+    @PostMapping("/check/email")
     public ResponseEntity<String> checkEmailToken(EmailCheckRequest emailCheckRequest) {
         boolean success = usersService.verifyEmail(emailCheckRequest.getEmail(), emailCheckRequest.getToken());
         return buildResponse(success, success ? "성공" : "실패");
