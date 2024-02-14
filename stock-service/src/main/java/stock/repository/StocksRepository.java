@@ -2,6 +2,7 @@ package stock.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import stock.domain.Stocks;
@@ -13,6 +14,8 @@ import java.util.List;
 public interface StocksRepository extends JpaRepository<Stocks, Long> {
 
     List<StockCodeProjection> findAllProjectedByStatus(boolean status);
+
+    List<Stocks> findAllByStatus(Sort sort, boolean status);
 
     List<Stocks> findByName(String name);
 

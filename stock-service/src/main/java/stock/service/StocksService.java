@@ -8,12 +8,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
+import stock.dto.SortRequest;
 import stock.dto.TypeRequest;
 import stock.repository.StocksRepository;
 import stock.repository.projection.StockCodeProjection;
@@ -100,5 +102,13 @@ public class StocksService {
     // 시장 종류 검색
     public Page<Stocks> findType(TypeRequest typeRequest, Pageable pageable) {
         return stocksRepository.findByMarketType(typeRequest.getMarketType(), pageable);
+    }
+
+    // 상장 리스트
+    public List<Stocks> findAllStocks(SortRequest sortRequest) {
+        Sort sort = "asc".equalsIgnoreCase(sortRequest.getMethod()) ?
+                Sort.by(sortRequest.getField()).ascending() :
+                Sort.by(sortRequest.getField()).descending();
+        return stocksRepository.findAllByStatus(sort, true);
     }
 }

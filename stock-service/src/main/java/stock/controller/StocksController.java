@@ -10,12 +10,15 @@ import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
+import stock.dto.SortRequest;
 import stock.dto.TypeRequest;
 import stock.repository.projection.StockCodeProjection;
 import stock.service.StocksService;
 
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -68,6 +71,19 @@ public class StocksController {
             return ResponseEntity.ok(stocksList);
         }
     }
+
+    @GetMapping("/find-all")
+    public ResponseEntity<?> sortAscend(@ModelAttribute SortRequest sortRequest) {
+        List<Stocks> foundStock = stocksService.findAllStocks(sortRequest);
+        if (foundStock.isEmpty()) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
+        }
+    }
+
+
+
 
     @GetMapping("/codes/module")
     public List<StockCodeProjection> findAllStockCodes() {
