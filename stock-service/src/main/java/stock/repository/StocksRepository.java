@@ -14,4 +14,6 @@ public interface StocksRepository extends JpaRepository<Stocks, Long> {
     List<StockCodeProjection> findAllProjectedByStatus(boolean status);
 
     List<Stocks> findByName(String name);
+
+    List<Stocks> findByCode(String code);
 }

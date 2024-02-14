@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
+import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
 import stock.repository.StocksRepository;
 import stock.repository.projection.StockCodeProjection;
@@ -86,5 +87,10 @@ public class StocksService {
     // 이름 검색
     public List<Stocks> findName(NameRequest nameRequest) {
         return stocksRepository.findByName(nameRequest.getName());
+    }
+
+    // 코드 검색
+    public List<Stocks> findCode(CodeRequest codeRequest) {
+        return stocksRepository.findByCode(codeRequest.getCode());
     }
 }

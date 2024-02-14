@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
+import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
 import stock.repository.projection.StockCodeProjection;
 import stock.service.StocksService;
@@ -35,6 +36,16 @@ public class StocksController {
     @PostMapping("/find-name")
     public ResponseEntity<?> findName(@RequestBody NameRequest nameRequest) {
         List<Stocks> foundStock = stocksService.findName(nameRequest);
+        if (foundStock.isEmpty()) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
+        }
+    }
+
+    @PostMapping("/find-code")
+    public ResponseEntity<?> findCode(@RequestBody CodeRequest codeRequest) {
+        List<Stocks> foundStock = stocksService.findCode(codeRequest);
         if (foundStock.isEmpty()) {
             return buildResponse(false, "없음");
         } else {
