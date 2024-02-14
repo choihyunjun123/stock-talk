@@ -1,5 +1,6 @@
 package stock.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -13,10 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
-import stock.dto.CodeRequest;
-import stock.dto.NameRequest;
-import stock.dto.SortRequest;
-import stock.dto.TypeRequest;
+import stock.dto.*;
 import stock.repository.StocksRepository;
 import stock.repository.projection.StockCodeProjection;
 
@@ -110,5 +108,21 @@ public class StocksService {
                 Sort.by(sortRequest.getField()).ascending() :
                 Sort.by(sortRequest.getField()).descending();
         return stocksRepository.findAllByStatus(sort, true);
+    }
+
+    public StockPriceRequest findStockInformation(String code) {
+        return stocksRepository.findByCode(code).stream()
+                .findFirst()
+                .map(information -> {
+                    StockPriceRequest stockPriceRequest = new StockPriceRequest();
+                    stockPriceRequest.setCode(information.getCode());
+                    stockPriceRequest.setName(information.getName());
+                    stockPriceRequest.setCeo(information.getCeo());
+                    stockPriceRequest.setPlace(information.getPlace());
+                    stockPriceRequest.setMarketType(information.getMarketType());
+                    stockPriceRequest.setStatus(information.isStatus());
+                    return stockPriceRequest;
+                })
+                .orElseThrow(() -> new EntityNotFoundException("Stock information not found for code: " + code));
     }
 }

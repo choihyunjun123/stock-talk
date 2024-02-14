@@ -2,6 +2,9 @@ package price.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import price.dto.CodesResponse;
+import price.dto.StockInformationRequest;
+import price.dto.StockPriceRequest;
 import price.service.PriceService;
 
 import java.io.IOException;
@@ -22,9 +25,18 @@ public class PriceController {
     }
 
     @GetMapping("/save-price-data")
-    private ResponseEntity<String> test() throws IOException {
+    private ResponseEntity<String> savePriceData() throws IOException {
         boolean success = priceService.crawl();
         return buildResponse(success, success ? "성공" : "실패");
     }
 
+    @GetMapping("/stock-information")
+    private ResponseEntity<?> stockInformation(StockInformationRequest stockInformationRequest) {
+        StockPriceRequest stockData = priceService.stockInformation(stockInformationRequest);
+        if (stockData == null) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(stockData);
+        }
+    }
 }

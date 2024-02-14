@@ -8,10 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
-import stock.dto.CodeRequest;
-import stock.dto.NameRequest;
-import stock.dto.SortRequest;
-import stock.dto.TypeRequest;
+import stock.dto.*;
 import stock.repository.projection.StockCodeProjection;
 import stock.service.StocksService;
 
@@ -43,19 +40,19 @@ public class StocksController {
     }
 
     @GetMapping("/find-name")
-    public ResponseEntity<?> findName(@ModelAttribute NameRequest nameRequest) {
+    public ResponseEntity<?> findByName(@ModelAttribute NameRequest nameRequest) {
         List<Stocks> foundStock = stocksService.findName(nameRequest);
         return handleRequest(foundStock);
     }
 
     @GetMapping("/find-code")
-    public ResponseEntity<?> findCode(@ModelAttribute CodeRequest codeRequest) {
+    public ResponseEntity<?> findByCode(@ModelAttribute CodeRequest codeRequest) {
         List<Stocks> foundStock = stocksService.findCode(codeRequest);
         return handleRequest(foundStock);
     }
 
     @GetMapping("/find-type")
-    public ResponseEntity<?> findType(@ModelAttribute TypeRequest typeRequest, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public ResponseEntity<?> findByType(@ModelAttribute TypeRequest typeRequest, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         Page<Stocks> foundStock = stocksService.findType(typeRequest, pageable);
         if (foundStock.isEmpty()) {
             return buildResponse(false, "없음");
@@ -82,8 +79,10 @@ public class StocksController {
         }
     }
 
-
-
+    @GetMapping("/find-stock-information/module")
+    public StockPriceRequest findAllByCode(@RequestParam("code") String code) {
+        return stocksService.findStockInformation(code);
+    }
 
     @GetMapping("/codes/module")
     public List<StockCodeProjection> findAllStockCodes() {

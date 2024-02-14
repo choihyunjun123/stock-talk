@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import price.client.PriceClient;
 import price.domain.Price;
 import price.dto.CodesResponse;
+import price.dto.StockInformationRequest;
+import price.dto.StockPriceRequest;
 import price.repository.PriceRepository;
 
 import java.io.IOException;
@@ -86,5 +88,20 @@ public class PriceService {
         price.setVolume(Long.valueOf(data[DATA_INDEX_VOLUME]));
         price.setCreatedAt(LocalDateTime.now());
         priceRepository.save(price);
+    }
+
+    public StockPriceRequest stockInformation(StockInformationRequest stockInformationRequest) {
+        String code = stockInformationRequest.getCode();
+        LocalDate date = LocalDate.parse(stockInformationRequest.getDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
+        StockPriceRequest stockPriceRequest = priceClient.getStockInformation(code);
+        priceRepository.findByStockCodeAndDate(code, date).ifPresent(price -> {
+            stockPriceRequest.setDate(price.getDate());
+            stockPriceRequest.setOpen(price.getOpen());
+            stockPriceRequest.setHigh(price.getHigh());
+            stockPriceRequest.setLow(price.getLow());
+            stockPriceRequest.setClose(price.getClose());
+            stockPriceRequest.setVolume(price.getVolume());
+        });
+        return stockPriceRequest;
     }
 }
