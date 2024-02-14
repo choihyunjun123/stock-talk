@@ -12,11 +12,13 @@ import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
+import stock.dto.TypeRequest;
 import stock.repository.StocksRepository;
 import stock.repository.projection.StockCodeProjection;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -92,5 +94,10 @@ public class StocksService {
     // 코드 검색
     public List<Stocks> findCode(CodeRequest codeRequest) {
         return stocksRepository.findByCode(codeRequest.getCode());
+    }
+
+    // 시장 종류 검색
+    public List<Stocks> findType(TypeRequest typeRequest) {
+        return stocksRepository.findByMarketType(typeRequest.getMarketType());
     }
 }

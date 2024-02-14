@@ -16,4 +16,6 @@ public interface StocksRepository extends JpaRepository<Stocks, Long> {
     List<Stocks> findByName(String name);
 
     List<Stocks> findByCode(String code);
+
+    List<Stocks> findByMarketType(int type);
 }

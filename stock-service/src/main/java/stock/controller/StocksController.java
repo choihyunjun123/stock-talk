@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
 import stock.dto.CodeRequest;
 import stock.dto.NameRequest;
+import stock.dto.TypeRequest;
 import stock.repository.projection.StockCodeProjection;
 import stock.service.StocksService;
 
@@ -33,23 +34,29 @@ public class StocksController {
         return buildResponse(success, success ? "성공" : "실패");
     }
 
-    @PostMapping("/find-name")
-    public ResponseEntity<?> findName(@RequestBody NameRequest nameRequest) {
+    @GetMapping("/find-name")
+    public ResponseEntity<?> findName(@ModelAttribute NameRequest nameRequest) {
         List<Stocks> foundStock = stocksService.findName(nameRequest);
-        if (foundStock.isEmpty()) {
-            return buildResponse(false, "없음");
-        } else {
-            return ResponseEntity.ok(foundStock);
-        }
+        return handleRequest(foundStock);
     }
 
-    @PostMapping("/find-code")
-    public ResponseEntity<?> findCode(@RequestBody CodeRequest codeRequest) {
+    @GetMapping("/find-code")
+    public ResponseEntity<?> findCode(@ModelAttribute CodeRequest codeRequest) {
         List<Stocks> foundStock = stocksService.findCode(codeRequest);
-        if (foundStock.isEmpty()) {
+        return handleRequest(foundStock);
+    }
+
+    @GetMapping("/find-type")
+    public ResponseEntity<?> findType(@ModelAttribute TypeRequest typeRequest) {
+        List<Stocks> foundStock = stocksService.findType(typeRequest);
+        return handleRequest(foundStock);
+    }
+
+    public ResponseEntity<?> handleRequest(List<Stocks> stocksList) {
+        if (stocksList.isEmpty()) {
             return buildResponse(false, "없음");
         } else {
-            return ResponseEntity.ok(foundStock);
+            return ResponseEntity.ok(stocksList);
         }
     }
 
