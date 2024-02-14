@@ -89,12 +89,12 @@ public class StocksService {
 
     // 이름 검색
     public List<Stocks> findName(NameRequest nameRequest) {
-        return stocksRepository.findByName(nameRequest.getName());
+        return stocksRepository.findByNameContaining(nameRequest.getName());
     }
 
     // 코드 검색
     public List<Stocks> findCode(CodeRequest codeRequest) {
-        return stocksRepository.findByCode(codeRequest.getCode());
+        return stocksRepository.findByCodeContaining(codeRequest.getCode());
     }
 
     // 시장 종류 검색

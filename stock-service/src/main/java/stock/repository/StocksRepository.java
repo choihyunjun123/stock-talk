@@ -17,7 +17,9 @@ public interface StocksRepository extends JpaRepository<Stocks, Long> {
 
     List<Stocks> findAllByStatus(Sort sort, boolean status);
 
-    List<Stocks> findByName(String name);
+    List<Stocks> findByNameContaining(String name);
+
+    List<Stocks> findByCodeContaining(String code);
 
     List<Stocks> findByCode(String code);
 
