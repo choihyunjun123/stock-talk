@@ -3,6 +3,8 @@ package stock.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import stock.domain.Stocks;
+import stock.dto.NameRequest;
 import stock.repository.projection.StockCodeProjection;
 import stock.service.StocksService;
 
@@ -19,18 +21,28 @@ public class StocksController {
         this.stocksService = stocksService;
     }
 
-    private ResponseEntity<String> buildResponse(boolean success, String message) {
+    private ResponseEntity<?> buildResponse(boolean success, String message) {
         String responseMessage = "{\"message\": \"" + message + "\"}";
         return success ? ResponseEntity.ok(responseMessage) : ResponseEntity.badRequest().body(responseMessage);
     }
 
     @PostMapping("/excel-upload")
-    public ResponseEntity<String> uploadExcelFile(@RequestParam("file") MultipartFile file, @RequestParam("type") int type) throws IOException {
+    public ResponseEntity<?> uploadExcelFile(@RequestParam("file") MultipartFile file, @RequestParam("type") int type) throws IOException {
         boolean success = stocksService.uploadExcelFile(file, type);
         return buildResponse(success, success ? "성공" : "실패");
     }
 
-    @GetMapping("/codes")
+    @PostMapping("/find-name")
+    public ResponseEntity<?> findName(@RequestBody NameRequest nameRequest) {
+        List<Stocks> foundStock = stocksService.findName(nameRequest);
+        if (foundStock.isEmpty()) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
+        }
+    }
+
+    @GetMapping("/codes/module")
     public List<StockCodeProjection> findAllStockCodes() {
         return stocksService.findAllStockCodes();
     }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import stock.domain.Stocks;
+import stock.dto.NameRequest;
 import stock.repository.StocksRepository;
 import stock.repository.projection.StockCodeProjection;
 
@@ -55,6 +56,7 @@ public class StocksService {
         Stocks stocks = new Stocks();
         stocks.setCreatedAt(LocalDateTime.now());
         stocks.setMarketType(type);
+        stocks.setStatus(true);
         for (Cell cell : row) {
             switch (cell.getColumnIndex()) {
                 case COLUMN_INDEX_NAME:
@@ -79,5 +81,10 @@ public class StocksService {
     // 상장코드 리스트
     public List<StockCodeProjection> findAllStockCodes() {
         return stocksRepository.findAllProjectedByStatus(true);
+    }
+
+    // 이름 검색
+    public List<Stocks> findName(NameRequest nameRequest) {
+        return stocksRepository.findByName(nameRequest.getName());
     }
 }

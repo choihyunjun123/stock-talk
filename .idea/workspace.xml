@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;주가 scheduled 저장 기능 추가&quot;">
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" afterDir="false" />
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Refactor: &quot;상수의 명명화&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/springspa/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/springspa/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/repository/StocksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/repository/StocksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/service/StocksService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,9 +61,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -77,6 +80,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -86,7 +93,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "C:/Project/Intellij/aloneTest",
+    "last_opened_file_path": "C:/Project/Intellij/stock-talk/discussion-board-service/src/main/java/dicussion/comment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +104,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Project\Intellij\stock-talk\discussion-board-service\src\main\java\dicussion\comment" />
       <recent name="C:\Project\Intellij\stock-talk\stock-service\src\main\resources" />
       <recent name="C:\Project\Intellij\stock-talk\price-date-service\src\main\resources" />
       <recent name="C:\Project\Intellij\stock-talk\discussion-board-service\src\main\resources" />
       <recent name="C:\Project\Intellij\stock-talk\authentication-service\src\main\resources" />
-      <recent name="C:\Project\Intellij\stock-talk\stock-service" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -121,7 +128,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.stock-talk:discussion-board-service [build]">
     <configuration name="stock-talk:discussion-board-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -234,7 +241,9 @@
       <workItem from="1707738975038" duration="238000" />
       <workItem from="1707739505939" duration="277000" />
       <workItem from="1707782947053" duration="23258000" />
-      <workItem from="1707820788926" duration="19218000" />
+      <workItem from="1707820788926" duration="19820000" />
+      <workItem from="1707887828773" duration="2296000" />
+      <workItem from="1707897706790" duration="2027000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -356,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707847556180</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refactor: &quot;상수의 명명화&quot;">
+      <option name="closed" value="true" />
+      <created>1707848097168</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707848097168</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,6 +403,7 @@
     <MESSAGE value="Feat: &quot;주가 종목 성공 실패 표시 추가&quot;" />
     <MESSAGE value="Feat: &quot;주가 저장 기능 추가&quot;" />
     <MESSAGE value="Feat: &quot;주가 scheduled 저장 기능 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;주가 scheduled 저장 기능 추가&quot;" />
+    <MESSAGE value="Refactor: &quot;상수의 명명화&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: &quot;상수의 명명화&quot;" />
   </component>
 </project>
