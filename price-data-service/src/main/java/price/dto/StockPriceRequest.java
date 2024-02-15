@@ -20,4 +20,5 @@ public class StockPriceRequest {
     private Long low;
     private Long close;
     private Long volume;
+    private Long totalTrade;
 }

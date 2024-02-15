@@ -37,7 +37,7 @@ public class Price {
     @Column(name = "close", nullable = false)
     private Long close;
 
-    @Column(name = "volume")
+    @Column(name = "volume", nullable = false)
     private Long volume;
 
     @Column(name = "total_trade")

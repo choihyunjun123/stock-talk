@@ -107,6 +107,7 @@ public class PriceService {
             stockPriceRequest.setLow(price.getLow());
             stockPriceRequest.setClose(price.getClose());
             stockPriceRequest.setVolume(price.getVolume());
+            stockPriceRequest.setTotalTrade(price.getTotalTrade());
         });
         return stockPriceRequest;
     }
