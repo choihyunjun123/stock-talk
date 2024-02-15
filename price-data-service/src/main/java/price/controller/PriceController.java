@@ -52,13 +52,13 @@ public class PriceController {
         }
     }
 
-//    @GetMapping("/total-amount-ranking")
-//    private ResponseEntity<?> totalAmountRanking() {
-//        List<Price> foundStock = priceService.totalAmountRanking();
-//        if (foundStock == null) {
-//            return buildResponse(false, "없음");
-//        } else {
-//            return ResponseEntity.ok(foundStock);
-//        }
-//    }
+    @GetMapping("/total-amount-ranking")
+    private ResponseEntity<?> totalAmountRanking(@RequestParam("date") String date, @RequestParam("method") String method) {
+        List<Price> foundStock = priceService.totalAmountRanking(date, method);
+        if (foundStock == null) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
+        }
+    }
 }

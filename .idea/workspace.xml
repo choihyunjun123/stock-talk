@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;Price에 거래대금 필드 추가&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/domain/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/domain/Price.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/dto/StockPriceRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/dto/StockPriceRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/controller/PriceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/controller/PriceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/repository/PriceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/repository/PriceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/controller/StocksController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,7 @@
       <workItem from="1707887828773" duration="2296000" />
       <workItem from="1707897706790" duration="2027000" />
       <workItem from="1707957557983" duration="7964000" />
-      <workItem from="1707966602625" duration="5248000" />
+      <workItem from="1707966602625" duration="5750000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -398,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707965685897</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Feat: &quot;Price에 거래대금 필드 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707972341651</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1707972341651</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import price.client.PriceClient;
@@ -135,7 +136,11 @@ public class PriceService {
         return priceRepository.findAllByStockCodeAndDateBetween(chartRequest.getCode(), start, end);
     }
 
-//    public List<Price> totalAmountRanking() {
-//
-//    }
+    public List<Price> totalAmountRanking(String date, String method) {
+        LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+        Sort sort = "asc".equalsIgnoreCase(method) ?
+                Sort.by("totalTrade").ascending() :
+                Sort.by("totalTrade").descending();
+        return priceRepository.findAllByDate(sort, localDate);
+    }
 }

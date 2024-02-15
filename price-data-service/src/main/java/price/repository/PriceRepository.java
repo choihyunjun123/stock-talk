@@ -1,5 +1,6 @@
 package price.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import price.domain.Price;
 
@@ -12,5 +13,5 @@ public interface PriceRepository extends JpaRepository<Price, Long> {
 
     List<Price> findAllByStockCodeAndDateBetween(String stockCode, LocalDate start, LocalDate end);
 
-//    List<Price> findAllBy
+    List<Price> findAllByDate(Sort sort, LocalDate date);
 }
