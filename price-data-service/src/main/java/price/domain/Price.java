@@ -43,6 +43,9 @@ public class Price {
     @Column(name = "total_trade")
     private Long totalTrade;
 
+    @Column(name = "price_change")
+    private Double priceChange;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 }
