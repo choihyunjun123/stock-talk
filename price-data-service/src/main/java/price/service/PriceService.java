@@ -110,7 +110,7 @@ public class PriceService {
         return stockPriceRequest;
     }
 
-    public Price findAll(ChartRequest chartRequest) {
+    public List<Price> findAll(ChartRequest chartRequest) {
         LocalDate end = LocalDate.parse(chartRequest.getStartDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
         int monthsAgo = 0;
         switch (chartRequest.getPeriod()) {

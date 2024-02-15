@@ -44,7 +44,7 @@ public class PriceController {
 
     @GetMapping("/chart-data")
     private ResponseEntity<?> findByType(@ModelAttribute ChartRequest chartRequest) {
-        Price foundStock = priceService.findAll(chartRequest);
+        List<Price> foundStock = priceService.findAll(chartRequest);
         if (foundStock == null) {
             return buildResponse(false, "없음");
         } else {
