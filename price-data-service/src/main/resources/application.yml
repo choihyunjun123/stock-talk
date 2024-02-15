@@ -4,10 +4,10 @@ spring:
     open-in-view: true
     properties:
       hibernate:
-        ddl-auto: create
+        ddl-auto: update
         format_sql: true
-      show-sql: true
     defer-datasource-initialization: true
+    show-sql: true
   datasource:
     url: jdbc:mysql://db:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=false
     username: user

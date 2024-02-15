@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import price.client.PriceClient;
 import price.domain.Price;
+import price.dto.ChartRequest;
 import price.dto.CodesResponse;
 import price.dto.StockInformationRequest;
 import price.dto.StockPriceRequest;
@@ -35,6 +36,10 @@ public class PriceService {
     private static final int DATA_INDEX_LOW = 3;
     private static final int DATA_INDEX_CLOSE = 4;
     private static final int DATA_INDEX_VOLUME = 5;
+    private static final int PERIOD_1M = 1;
+    private static final int PERIOD_1Y = 12;
+    private static final int PERIOD_3Y = 36;
+    private static final int PERIOD_5Y = 60;
 
     @Autowired
     public PriceService(PriceRepository priceRepository, PriceClient priceClient) {
@@ -103,5 +108,28 @@ public class PriceService {
             stockPriceRequest.setVolume(price.getVolume());
         });
         return stockPriceRequest;
+    }
+
+    public Price findAll(ChartRequest chartRequest) {
+        LocalDate end = LocalDate.parse(chartRequest.getStartDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
+        int monthsAgo = 0;
+        switch (chartRequest.getPeriod()) {
+            case "1m":
+                monthsAgo = PERIOD_1M;
+                break;
+            case "1y":
+                monthsAgo = PERIOD_1Y;
+                break;
+            case "3y":
+                monthsAgo = PERIOD_3Y;
+                break;
+            case "5y":
+                monthsAgo = PERIOD_5Y;
+                break;
+            default:
+                break;
+        }
+        LocalDate start = end.minusMonths(monthsAgo);
+        return priceRepository.findAllByStockCodeAndDateBetween(chartRequest.getCode(), start, end);
     }
 }

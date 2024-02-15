@@ -2,12 +2,14 @@ package price.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import price.dto.CodesResponse;
+import price.domain.Price;
+import price.dto.ChartRequest;
 import price.dto.StockInformationRequest;
 import price.dto.StockPriceRequest;
 import price.service.PriceService;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/price")
@@ -37,6 +39,16 @@ public class PriceController {
             return buildResponse(false, "없음");
         } else {
             return ResponseEntity.ok(stockData);
+        }
+    }
+
+    @GetMapping("/chart-data")
+    private ResponseEntity<?> findByType(@ModelAttribute ChartRequest chartRequest) {
+        Price foundStock = priceService.findAll(chartRequest);
+        if (foundStock == null) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
         }
     }
 }
