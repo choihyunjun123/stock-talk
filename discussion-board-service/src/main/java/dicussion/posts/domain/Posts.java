@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 @Table(name = "posts")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -31,19 +32,19 @@ public class Posts {
     private String stockId;
 
     @Column(name = "views", nullable = false)
-    private Long views;
+    private Long views = 0L;
 
     @Column(name = "likes", nullable = false)
-    private Long likes;
+    private Long likes = 0L;
 
     @Column(name = "dislikes", nullable = false)
-    private Long dislikes;
+    private Long dislikes = 0L;
 
     @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private LocalDate updatedAt;
 
     @Column(name = "status", nullable = false)
     private boolean status;
