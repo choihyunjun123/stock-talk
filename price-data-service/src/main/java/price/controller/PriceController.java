@@ -51,4 +51,14 @@ public class PriceController {
             return ResponseEntity.ok(foundStock);
         }
     }
+
+//    @GetMapping("/total-amount-ranking")
+//    private ResponseEntity<?> totalAmountRanking() {
+//        List<Price> foundStock = priceService.totalAmountRanking();
+//        if (foundStock == null) {
+//            return buildResponse(false, "없음");
+//        } else {
+//            return ResponseEntity.ok(foundStock);
+//        }
+//    }
 }

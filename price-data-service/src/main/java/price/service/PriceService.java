@@ -91,6 +91,7 @@ public class PriceService {
         price.setLow(Long.valueOf(data[DATA_INDEX_LOW]));
         price.setClose(Long.valueOf(data[DATA_INDEX_CLOSE]));
         price.setVolume(Long.valueOf(data[DATA_INDEX_VOLUME]));
+        price.setTotalTrade(Long.parseLong(data[DATA_INDEX_CLOSE]) * Long.parseLong(data[DATA_INDEX_VOLUME]));
         price.setCreatedAt(LocalDateTime.now());
         priceRepository.save(price);
     }
@@ -132,4 +133,8 @@ public class PriceService {
         LocalDate start = end.minusMonths(monthsAgo);
         return priceRepository.findAllByStockCodeAndDateBetween(chartRequest.getCode(), start, end);
     }
+
+//    public List<Price> totalAmountRanking() {
+//
+//    }
 }

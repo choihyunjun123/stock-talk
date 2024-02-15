@@ -40,6 +40,9 @@ public class Price {
     @Column(name = "volume")
     private Long volume;
 
+    @Column(name = "total_trade")
+    private Long totalTrade;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 }

@@ -11,4 +11,6 @@ public interface PriceRepository extends JpaRepository<Price, Long> {
     Optional<Price> findByStockCodeAndDate(String stockCode, LocalDate date);
 
     List<Price> findAllByStockCodeAndDateBetween(String stockCode, LocalDate start, LocalDate end);
+
+//    List<Price> findAllBy
 }
