@@ -166,4 +166,12 @@ public class PriceService {
                 Sort.by("totalTrade").descending();
         return priceRepository.findAllByDate(sort, localDate);
     }
+
+    public List<Price> priceChangeRanking(String date, String method) {
+        LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+        Sort sort = "asc".equalsIgnoreCase(method) ?
+                Sort.by("priceChange").ascending() :
+                Sort.by("priceChange").descending();
+        return priceRepository.findAllByDate(sort, localDate);
+    }
 }

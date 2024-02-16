@@ -61,4 +61,14 @@ public class PriceController {
             return ResponseEntity.ok(foundStock);
         }
     }
+
+    @GetMapping("/price-change-ranking")
+    private ResponseEntity<?> priceChangeRanking(@RequestParam("date") String date, @RequestParam("method") String method) {
+        List<Price> foundStock = priceService.priceChangeRanking(date, method);
+        if (foundStock == null) {
+            return buildResponse(false, "없음");
+        } else {
+            return ResponseEntity.ok(foundStock);
+        }
+    }
 }
