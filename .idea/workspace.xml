@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;등락률 엔티티 추가&quot;">
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;discussion 검색 기능 추가&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/controller/PostsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/controller/PostsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/domain/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/domain/Posts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/repository/PostsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/repository/PostsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/service/PostsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/posts/service/PostsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +93,18 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Project/Intellij/springTestSelf&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project/Intellij/stock-talk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -127,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.stock-talk:discussion-board-service [build]">
+  <component name="RunManager">
     <configuration name="stock-talk:discussion-board-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -228,6 +234,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.stock-talk:discussion-board-service [build]" />
+      <item itemvalue="Gradle.stock-talk:stock-service [build]" />
+      <item itemvalue="Spring Boot.Application (3)" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="Spring Boot.Application (2)" />
+      <item itemvalue="Spring Boot.Application (4)" />
+      <item itemvalue="Spring Boot.Application (5)" />
+      <item itemvalue="Spring Boot.Application (6)" />
+      <item itemvalue="Spring Boot.Application (7)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.stock-talk:stock-service [build]" />
@@ -251,7 +269,10 @@
       <workItem from="1707887828773" duration="2296000" />
       <workItem from="1707897706790" duration="2027000" />
       <workItem from="1707957557983" duration="7964000" />
-      <workItem from="1707966602625" duration="10046000" />
+      <workItem from="1707966602625" duration="10750000" />
+      <workItem from="1708055585317" duration="172000" />
+      <workItem from="1708056568007" duration="3067000" />
+      <workItem from="1708059795038" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -429,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707974789122</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Feat: &quot;discussion 검색 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1707978406132</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707978406132</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,6 +493,7 @@
     <MESSAGE value="Feat: &quot;Price에 거래대금 필드 추가&quot;" />
     <MESSAGE value="Feat: &quot;거래대금 정렬 기능 추가&quot;" />
     <MESSAGE value="Feat: &quot;등락률 엔티티 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;등락률 엔티티 추가&quot;" />
+    <MESSAGE value="Feat: &quot;discussion 검색 기능 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;discussion 검색 기능 추가&quot;" />
   </component>
 </project>

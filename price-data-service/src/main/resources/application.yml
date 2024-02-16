@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   jpa:
     generate-ddl: true
@@ -9,7 +12,7 @@ spring:
     defer-datasource-initialization: true
     show-sql: true
   datasource:
-    url: jdbc:mysql://db:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=false
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
