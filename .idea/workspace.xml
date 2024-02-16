@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Refactor: &quot;application 이름 변경&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c5ed9a3a-7c2e-4213-b7c7-11105b119968.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c5ed9a3a-7c2e-4213-b7c7-11105b119968/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c5ed9a3a-7c2e-4213-b7c7-11105b119968/storage_v2/_src_/schema/mydatabase.J7NGgg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c5ed9a3a-7c2e-4213-b7c7-11105b119968/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Refactor: &quot;gitignore 설정 변경&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/AuthenticationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/discussion-board-service/src/main/java/dicussion/DiscussionApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/PriceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/stock/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/stock/StockApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +118,11 @@
       <recent name="authentication.users.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="stock" />
+      <recent name="price" />
+      <recent name="dicussion" />
+      <recent name="authentication" />
       <recent name="authentication.users.domain" />
-      <recent name="springspa" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -190,8 +183,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.stock-talk:stock-service [build]" />
         <item itemvalue="Gradle.stock-talk:discussion-board-service [build]" />
+        <item itemvalue="Gradle.stock-talk:stock-service [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +207,8 @@
       <workItem from="1707966602625" duration="10750000" />
       <workItem from="1708055585317" duration="172000" />
       <workItem from="1708056568007" duration="3067000" />
-      <workItem from="1708059795038" duration="678000" />
+      <workItem from="1708059795038" duration="1880000" />
+      <workItem from="1708063105157" duration="2525000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -408,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708060470965</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refactor: &quot;gitignore 설정 변경&quot;">
+      <option name="closed" value="true" />
+      <created>1708060526613</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1708060526613</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,6 +447,7 @@
     <MESSAGE value="Feat: &quot;등락률 엔티티 추가&quot;" />
     <MESSAGE value="Feat: &quot;discussion 검색 기능 추가&quot;" />
     <MESSAGE value="Refactor: &quot;application 이름 변경&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: &quot;application 이름 변경&quot;" />
+    <MESSAGE value="Refactor: &quot;gitignore 설정 변경&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: &quot;gitignore 설정 변경&quot;" />
   </component>
 </project>

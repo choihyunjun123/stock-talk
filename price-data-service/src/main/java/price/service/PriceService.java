@@ -21,6 +21,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PriceService {
@@ -78,23 +79,45 @@ public class PriceService {
     private void savePrice(String stockCode, Element item, boolean initialCrawl) {
         String[] data = item.attr("data").split("\\|");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-        Price price;
-        if (initialCrawl) {
-            price = new Price();
-            price.setStockCode(stockCode);
-            price.setDate(LocalDate.parse(data[DATA_INDEX_DATE], formatter));
-        } else {
-            price = priceRepository.findByStockCodeAndDate(stockCode, LocalDate.parse(data[DATA_INDEX_DATE], formatter))
-                    .orElse(new Price());
-        }
-        price.setOpen(Long.valueOf(data[DATA_INDEX_OPEN]));
-        price.setHigh(Long.valueOf(data[DATA_INDEX_HIGH]));
-        price.setLow(Long.valueOf(data[DATA_INDEX_LOW]));
-        price.setClose(Long.valueOf(data[DATA_INDEX_CLOSE]));
-        price.setVolume(Long.valueOf(data[DATA_INDEX_VOLUME]));
-        price.setTotalTrade(Long.parseLong(data[DATA_INDEX_CLOSE]) * Long.parseLong(data[DATA_INDEX_VOLUME]));
+        LocalDate date = LocalDate.parse(data[DATA_INDEX_DATE], formatter);
+        Price price = initialCrawl ? new Price() : priceRepository.findByStockCodeAndDate(stockCode, date)
+                .orElse(new Price());
+
+        setPriceData(stockCode, price, data);
         price.setCreatedAt(LocalDateTime.now());
+
+        Optional<Price> optionalBeforePrice = findFirstExistingPriceBeforeDate(stockCode, date);
+        optionalBeforePrice.ifPresent(beforePrice -> calculateAndSetPriceChange(price, data[DATA_INDEX_CLOSE], beforePrice));
+
         priceRepository.save(price);
+    }
+
+    private Optional<Price> findFirstExistingPriceBeforeDate(String stockCode, LocalDate date) {
+        for (int i = 1; i < 10; i++) {
+            Optional<Price> existingPrice = priceRepository.findByStockCodeAndDate(stockCode, date.minusDays(i));
+            if (existingPrice.isPresent()) {
+                return existingPrice;
+            }
+        }
+        return Optional.empty();
+    }
+
+    private void calculateAndSetPriceChange(Price price, String closeData, Price beforePrice) {
+        double closeValue = Double.parseDouble(closeData);
+        double priceChange = (closeValue - beforePrice.getClose()) / beforePrice.getClose() * 100;
+        price.setPriceChange(priceChange);
+    }
+
+    private void setPriceData(String stockCode, Price price, String[] data) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        price.setStockCode(stockCode);
+        price.setDate(LocalDate.parse(data[DATA_INDEX_DATE], formatter));
+        price.setOpen(Long.parseLong(data[DATA_INDEX_OPEN]));
+        price.setHigh(Long.parseLong(data[DATA_INDEX_HIGH]));
+        price.setLow(Long.parseLong(data[DATA_INDEX_LOW]));
+        price.setClose(Long.parseLong(data[DATA_INDEX_CLOSE]));
+        price.setVolume(Long.parseLong(data[DATA_INDEX_VOLUME]));
+        price.setTotalTrade(Long.parseLong(data[DATA_INDEX_CLOSE]) * Long.parseLong(data[DATA_INDEX_VOLUME]));
     }
 
     public StockPriceRequest stockInformation(StockInformationRequest stockInformationRequest) {
