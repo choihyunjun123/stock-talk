@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    generate-ddl: true
+    open-in-view: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        format_sql: true
+    defer-datasource-initialization: true
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sajun288@gmail.com
+    password: chwcvvcxyfivyvea
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  jwt:
+    your-secret-key: 64461f01e1af406da538b9c48d801ce59142452199ff112fb5404c8e7e98e3ff
+    accessTokenExpiration: 3600000
+    refreshTokenExpiration: 86400000

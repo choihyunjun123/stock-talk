@@ -41,9 +41,3 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-docker-compose.yml
-
-/authentication-service/src/main/resources/application.yml
-/stock-service/src/main/resources/application.yml
-/discussion-board-service/src/main/resources/application.yml
-/price-date-service/src/main/resources/application.yml
