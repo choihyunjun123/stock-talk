@@ -8,7 +8,7 @@ import price.dto.StockPriceRequest;
 
 import java.util.List;
 
-@FeignClient(name = "price", url = "http://host.docker.internal:8081")
+@FeignClient(name = "price", url = "http://localhost:8081")
 public interface  PriceClient {
 
     @GetMapping("/stocks/codes/module")
