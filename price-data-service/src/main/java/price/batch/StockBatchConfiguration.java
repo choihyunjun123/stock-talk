@@ -1,46 +1,49 @@
 package price.batch;
 
+import org.asynchttpclient.AsyncHttpClient;
+import org.asynchttpclient.Dsl;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.Chunk;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import price.domain.Price;
+import org.springframework.transaction.PlatformTransactionManager;
 import price.repository.PriceRepository;
 
+import java.time.LocalDateTime;
+
 @Configuration
-@EnableBatchProcessing
 public class StockBatchConfiguration {
 
-    @Autowired
-    private PriceRepository priceRepository;
+    private static final String JOB_NAME = "job";
+    private static final String STEP_NAME = "step";
+    private final StockCrawlingService stockCrawlingService;
+    private final PriceRepository priceRepository;
 
-    @Autowired
-    private StockCrawlingService crawlingService;
+    public StockBatchConfiguration(StockCrawlingService stockCrawlingService, PriceRepository priceRepository) {
+        this.stockCrawlingService = stockCrawlingService;
+        this.priceRepository = priceRepository;
+    }
 
     @Bean
-    public Job job() {
-        return new JobBuilder("stockJob")
-                .start(step1())
+    Job createJob(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+        return new JobBuilder(JOB_NAME, jobRepository)
+                .incrementer(new RunIdIncrementer())
+                .flow(createStep(jobRepository, transactionManager))
+                .end()
                 .build();
     }
 
     @Bean
-    public Step step1() {
-        return new StepBuilder("step1")
-                .<Price, Price>chunk(10)
-                .reader(new StockItemReader(crawlingService))
-                .writer(new ItemWriter<Price>() {
-                    @Override
-                    public void write(Chunk<? extends Price> chunk) throws Exception {
-                        priceRepository.saveAll(chunk);
-                    }
-                })
+    Step createStep(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+        return new StepBuilder(STEP_NAME, jobRepository)
+                .<String, String>chunk(10, transactionManager)
+                .allowStartIfComplete(true)
+                .reader(new CustomReader(stockCrawlingService, stockCrawlingService.crawlStocks()))
+                .writer(new CustomWriter(priceRepository))
                 .build();
     }
 }

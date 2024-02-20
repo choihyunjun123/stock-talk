@@ -6,7 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import price.client.PriceClient;
 import price.domain.Price;
@@ -50,38 +49,31 @@ public class PriceService {
     }
 
     public boolean crawl() throws IOException {
-        updateStockPrices(true);
+        updateStockPrices();
         return true;
     }
 
-    @Scheduled(cron = "0 0 1 * * ?")
-    public void scheduledCrawl() {
-        updateStockPrices(false);
-    }
-
-    private void updateStockPrices(boolean initialCrawl) {
+    private void updateStockPrices() {
         List<CodesResponse> codes = priceClient.getCodesFromStocks();
-        codes.forEach(code -> processCode(code, initialCrawl));
+        codes.forEach(this::processCode);
     }
 
-    private void processCode(CodesResponse code, boolean initialCrawl) {
-        String countParam = initialCrawl ? INITIAL_CRAWL_DATA_COUNT : SCHEDULED_CRAWL_DATA_COUNT;
-        String url = String.format("https://fchart.stock.naver.com/sise.nhn?symbol=%s&timeframe=day&count=%s&requestType=0", code.getCode(), countParam);
+    private void processCode(CodesResponse code) {
+        String url = String.format("https://fchart.stock.naver.com/sise.nhn?symbol=%s&timeframe=day&count=%s&requestType=0", code.getCode(), INITIAL_CRAWL_DATA_COUNT);
         try {
             Document document = Jsoup.connect(url).get();
             Elements elements = document.getElementsByTag("item");
-            elements.forEach(element -> savePrice(code.getCode(), element, initialCrawl));
+            elements.forEach(element -> savePrice(code.getCode(), element));
         } catch (IOException e) {
             System.err.println("Failed to fetch or save price for stock code: " + code.getCode() + ". Error: " + e.getMessage());
         }
     }
 
-    private void savePrice(String stockCode, Element item, boolean initialCrawl) {
+    private void savePrice(String stockCode, Element item) {
         String[] data = item.attr("data").split("\\|");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         LocalDate date = LocalDate.parse(data[DATA_INDEX_DATE], formatter);
-        Price price = initialCrawl ? new Price() : priceRepository.findByStockCodeAndDate(stockCode, date)
-                .orElse(new Price());
+        Price price = new Price();
 
         setPriceData(stockCode, price, data);
         price.setCreatedAt(LocalDateTime.now());
