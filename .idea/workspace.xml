@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;맥 브랜치 생성">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5ed9a3a-7c2e-4213-b7c7-11105b119968.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_24__1_27AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_24__1_27AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_24__1_27AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_24__1_27AM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_19_24__5_41AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_19_24__5_41AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/PriceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/PriceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/batch/StockBatchConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/batch/StockBatchConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/batch/StockCrawlingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/batch/StockCrawlingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/batch/StockItemReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/java/price/service/PriceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/price-data-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +141,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "mac",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
@@ -315,6 +314,7 @@
       <workItem from="1708284730904" duration="3647000" />
       <workItem from="1708420413036" duration="29000" />
       <workItem from="1708421288781" duration="20618000" />
+      <workItem from="1708479305803" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
