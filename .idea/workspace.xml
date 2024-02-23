@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;맥 브랜치 생성">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/AuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/AuthenticationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/domain/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/domain/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/authentication/users/service/UsersService.java" afterDir="false" />
-    </list>
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,7 +305,7 @@
       <workItem from="1708420413036" duration="29000" />
       <workItem from="1708421288781" duration="20618000" />
       <workItem from="1708595836745" duration="19000" />
-      <workItem from="1708675416366" duration="12186000" />
+      <workItem from="1708675416366" duration="12490000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -549,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708289112689</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;">
+      <option name="closed" value="true" />
+      <created>1708701008768</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1708701008768</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,6 +589,7 @@
     <MESSAGE value="Feat: &quot;등락률 계산 api 추가&quot;" />
     <MESSAGE value="." />
     <MESSAGE value="Feat: &quot;맥 브랜치 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;맥 브랜치 생성" />
+    <MESSAGE value="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
   </component>
 </project>

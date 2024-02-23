@@ -29,6 +29,8 @@ public class UsersService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtTokenProvider tokenProvider;
 
+    private static final String BEARER_PREFIX = "Bearer ";
+
     @Autowired
     public UsersService(UsersRepository usersRepository, RefreshTokenRepository refreshTokenRepository, EmailService emailService, BCryptPasswordEncoder passwordEncoder, JwtTokenProvider tokenProvider) {
         this.usersRepository = usersRepository;
@@ -92,14 +94,10 @@ public class UsersService {
 
     // 로그인
     public LoginResponse login(LoginRequest loginRequest) throws AuthenticationException {
-        Optional<Users> users = usersRepository.findByEmail(loginRequest.getEmail());
-        Users users1 = users.orElse(null);
-        assert users1 != null;
-        if (!passwordEncoder.matches(loginRequest.getPassword(), users1.getPassword())) {
-            throw new AuthenticationException("회원정보가 없습니다.");
-        }
-        ;
-        return generateLoginResponse(users1);
+        return usersRepository.findByEmail(loginRequest.getEmail())
+                .filter(user -> passwordEncoder.matches(loginRequest.getPassword(), user.getPassword()))
+                .map(this::generateLoginResponse)
+                .orElseThrow(() -> new AuthenticationException("회원정보가 없습니다."));
     }
 
     // 토큰 생성
@@ -110,33 +108,35 @@ public class UsersService {
     }
 
     public String accessValidate(String token) {
-        if (token != null && token.startsWith("Bearer ")) {
-            token = token.substring(7);
-            try {
-                tokenProvider.validateToken(token);
-                return "토큰이 유효합니다.";
-            } catch (Exception e) {
-                return e.getMessage();
-            }
-        }
-        return "토큰이 없습니다.";
+        return validateToken(token, false);
     }
 
     public String refreshValidate(String token) {
-        if (token != null && token.startsWith("Bearer ")) {
-            token = token.substring(7);
-            try {
-                tokenProvider.validateToken(token);
-                Optional<RefreshToken> refreshToken = refreshTokenRepository.findByToken(token);
-                RefreshToken refreshToken1 = refreshToken.orElse(null);
-                assert refreshToken1 != null;
-                Users users = refreshToken1.getUsers();
-                generateLoginResponse(users);
-                return generateLoginResponse(users).getAccessToken();
-            } catch (Exception e) {
-                return e.getMessage();
-            }
+        return validateToken(token, true);
+    }
+
+    private String validateToken(String token, boolean isRefreshToken) {
+        String result = getTokenFromBearerString(token)
+                .map(t -> {
+                    try {
+                        tokenProvider.validateToken(t);
+                        if (isRefreshToken) {
+                            return refreshTokenRepository.findByToken(t)
+                                    .map(refreshToken -> generateLoginResponse(refreshToken.getUsers()).getAccessToken())
+                                    .orElse("리프레시 토큰이 유효하지 않습니다.");
+                        }
+                        return "토큰이 유효합니다.";
+                    } catch (Exception e) {
+                        return e.getMessage();
+                    }
+                }).orElse("토큰이 없습니다.");
+        return result;
+    }
+
+    private Optional<String> getTokenFromBearerString(String token) {
+        if (token != null && token.startsWith(BEARER_PREFIX)) {
+            return Optional.of(token.substring(BEARER_PREFIX.length()));
         }
-        return "토큰이 없습니다.";
+        return Optional.empty();
     }
 }
