@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
+    <list default="true" id="f5991148-dc76-4f04-a48a-355bc8127f49" name="Changes" comment="Refactor: &quot;user service 중복 코드 제거&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,7 +305,7 @@
       <workItem from="1708420413036" duration="29000" />
       <workItem from="1708421288781" duration="20618000" />
       <workItem from="1708595836745" duration="19000" />
-      <workItem from="1708675416366" duration="12490000" />
+      <workItem from="1708675416366" duration="13090000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: &quot;의존성 추가&quot;">
       <option name="closed" value="true" />
@@ -547,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708701008768</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Refactor: &quot;user service 중복 코드 제거&quot;">
+      <option name="closed" value="true" />
+      <created>1708701280649</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1708701280649</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feat: &quot;의존성 추가&quot;" />
     <MESSAGE value="Feat: &quot;스프링 부트 기본 설정&quot;" />
     <MESSAGE value="Feat: &quot;Docker 기본 설정&quot;" />
     <MESSAGE value="Feat: &quot;Users 기본 설정&quot;" />
@@ -590,6 +597,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Feat: &quot;맥 브랜치 생성" />
     <MESSAGE value="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: &quot;jwt 토큰 회원가입 로그인 기능 추가&quot;" />
+    <MESSAGE value="Refactor: &quot;user service 중복 코드 제거&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: &quot;user service 중복 코드 제거&quot;" />
   </component>
 </project>
