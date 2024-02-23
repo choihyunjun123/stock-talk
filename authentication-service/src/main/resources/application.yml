@@ -31,3 +31,7 @@ spring:
     your-secret-key: 64461f01e1af406da538b9c48d801ce59142452199ff112fb5404c8e7e98e3ff
     accessTokenExpiration: 3600000
     refreshTokenExpiration: 86400000
+
+logging:
+  level:
+    root: INFO

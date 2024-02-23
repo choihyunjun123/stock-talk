@@ -1,14 +1,12 @@
 package authentication.users.service;
 
-import authentication.users.domain.RefreshToken;
 import authentication.users.domain.Users;
 import authentication.users.dto.LoginRequest;
 import authentication.users.dto.LoginResponse;
 import authentication.users.repository.RefreshTokenRepository;
 import authentication.users.repository.UsersRepository;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwts;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
+
 @Service
 public class UsersService {
 
@@ -28,6 +27,7 @@ public class UsersService {
     private final EmailService emailService;
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtTokenProvider tokenProvider;
+    private static final Logger logger = LoggerFactory.getLogger(UsersService.class);
 
     private static final String BEARER_PREFIX = "Bearer ";
 
@@ -51,6 +51,7 @@ public class UsersService {
 
     // 이메일 중복 확인
     public boolean isEmailAlreadyUsed(String email) {
+        logger.info("Fetching user by ID: {}", email);
         return usersRepository.findByEmailAndStatus(email, true).isPresent();
     }
 
