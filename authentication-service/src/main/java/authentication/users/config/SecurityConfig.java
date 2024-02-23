@@ -30,11 +30,11 @@ public class SecurityConfig {
 
     @Bean
     public long accessTokenExpiration() {
-        return 3600000;
+        return 100000;
     }
 
     @Bean
     public long refreshTokenExpiration() {
-        return 86400000;
+        return 100000;
     }
 }

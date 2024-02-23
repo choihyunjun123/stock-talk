@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,9 +29,6 @@ public class Users {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "role", nullable = false)
-    private String role;
-
     @Column(name = "email_check_token", nullable = false)
     private String emailCheckToken;
 
@@ -45,4 +43,8 @@ public class Users {
 
     @Column(name = "status", nullable = false)
     private boolean status;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Column(name = "role", nullable = false)
+    private Set<String> role;
 }
