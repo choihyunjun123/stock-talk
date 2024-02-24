@@ -1,0 +1,6 @@
+dependencies {
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.asynchttpclient:async-http-client:2.12.3'
+}
