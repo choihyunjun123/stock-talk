@@ -31,7 +31,7 @@ public class PostsController {
     }
 
     @GetMapping("/find-title")
-    public ResponseEntity<?> findTitle(@RequestParam("title") String title) {
+    public ResponseEntity<?> findByTitle(@RequestParam("title") String title) {
         List<Posts> foundPost = postsService.findTitle(title);
         if (foundPost.isEmpty()) {
             return buildResponse(false, "없음");
@@ -41,7 +41,7 @@ public class PostsController {
     }
 
     @GetMapping("/find-writer")
-    public ResponseEntity<?> findWriter(@RequestParam("writer") String writer) {
+    public ResponseEntity<?> findByWriter(@RequestParam("writer") String writer) {
         List<Posts> foundPost = postsService.findWriter(writer);
         if (foundPost.isEmpty()) {
             return buildResponse(false, "없음");
@@ -51,7 +51,7 @@ public class PostsController {
     }
 
     @GetMapping("/find-content")
-    public ResponseEntity<?> findContent(@RequestParam("content") String content) {
+    public ResponseEntity<?> findByContent(@RequestParam("content") String content) {
         List<Posts> foundPost = postsService.findContent(content);
         if (foundPost.isEmpty()) {
             return buildResponse(false, "없음");
