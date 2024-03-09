@@ -61,7 +61,7 @@ docker-compose up -d
 상세한 데이터 모델 설계는 [ErdCloud](https://www.erdcloud.com/d/QT354Ekvet9Zd5sAr)에서 확인할 수 있습니다.
 
 ## API 문서
-자세한 API 문서는 [Postman](Postman_문서_URL)을 통해 제공됩니다.
+자세한 API 문서는 [여기](https://jjunys.notion.site/API-c6d0ae7b9c494660af1fa303432d9627?pvs=4)에서 확인할 수 있습니다.
 
 ## File 구조
 ```
