@@ -117,7 +117,7 @@ public class UsersService {
     }
 
     private String validateToken(String token, boolean isRefreshToken) {
-        String result = getTokenFromBearerString(token)
+        return getTokenFromBearerString(token)
                 .map(t -> {
                     try {
                         tokenProvider.validateToken(t);
@@ -131,7 +131,6 @@ public class UsersService {
                         return e.getMessage();
                     }
                 }).orElse("토큰이 없습니다.");
-        return result;
     }
 
     private Optional<String> getTokenFromBearerString(String token) {
