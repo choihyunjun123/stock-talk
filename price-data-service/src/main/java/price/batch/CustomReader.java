@@ -20,7 +20,7 @@ public class CustomReader implements ItemReader<String> {
 
 
     @Override
-    public String read() throws Exception {
+    public String read() {
         if (index >= codes.size()) {
             return null;
         }
