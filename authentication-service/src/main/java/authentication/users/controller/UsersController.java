@@ -6,6 +6,8 @@ import authentication.users.dto.LoginRequest;
 import authentication.users.dto.LoginResponse;
 import authentication.users.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +43,10 @@ public class UsersController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) throws AuthenticationException {
-        return ResponseEntity.ok(usersService.login(loginRequest));
+        LoginResponse loginResponse = usersService.login(loginRequest);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Bearer " + loginResponse.getAccessToken());
+        return new ResponseEntity<>(loginResponse, headers, HttpStatus.OK);
     }
 
     @GetMapping("/access-token")
