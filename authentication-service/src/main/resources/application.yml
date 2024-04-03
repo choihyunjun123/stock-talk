@@ -12,9 +12,9 @@ spring:
     defer-datasource-initialization: true
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-    username: user
-    password: password
+    url: jdbc:mysql://localhost:3306/authenticationdatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: data
+    password: data
     driver-class-name: com.mysql.cj.jdbc.Driver
   mail:
     host: smtp.gmail.com

@@ -12,7 +12,7 @@ spring:
     defer-datasource-initialization: true
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=false
-    username: user
-    password: password
+    url: jdbc:mysql://localhost:3309/stockdatabase?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&allowPublicKeyRetrieval=true&useSSL=false
+    username: data
+    password: data
     driver-class-name: com.mysql.cj.jdbc.Driver
