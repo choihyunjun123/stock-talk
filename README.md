@@ -29,6 +29,9 @@
 - **데이터베이스:** MySQL
 - **인증:** JWT
 - **기타:** Docker, Docker Compose
+- **ERD 작성:** ERDCloud
+- **문서 및 프로젝트 관리:** Notion
+- **버전 관리:** GitHub
 
 ## 🌟 시작하기
 
