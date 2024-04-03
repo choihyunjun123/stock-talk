@@ -72,10 +72,10 @@ docker-compose up -d
 ![img.png](img.png)
 상세한 데이터 모델 설계는 [ErdCloud](https://www.erdcloud.com/d/QT354Ekvet9Zd5sAr)에서 확인할 수 있습니다.
 
-## API 문서
+## 🔨 API 문서
 자세한 API 문서는 [여기](https://jjunys.notion.site/API-c6d0ae7b9c494660af1fa303432d9627?pvs=4)에서 확인할 수 있습니다.
 
-## File 구조
+## 🌁 File 구조
 ```
 stock-talk/
 ├── stock-service/               # 주식 정보 서비스
@@ -89,7 +89,7 @@ stock-talk/
     └── user/
 ```
 
-## 기술적 문제 해결 방법 및 사용 이유
+## 📝 기술적 문제 해결 방법 및 사용 이유
 
 ### 회원가입 및 로그인 보안 강화
 
