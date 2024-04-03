@@ -1,16 +1,55 @@
 version: '3.8'
 services:
-  db:
+  authenticationdb:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: authenticationdatabase
+      MYSQL_USER: data
+      MYSQL_PASSWORD: data
       MYSQL_ROOT_PASSWORD: rootpassword
     ports:
       - "3306:3306"
     volumes:
-      - db-data:/var/lib/mysql
+      - authenticationdb-data:/var/lib/mysql
+    restart: always
+
+  dicussiondb:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: discusstiondatabase
+      MYSQL_USER: data
+      MYSQL_PASSWORD: data
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - discusstiondb-data:/var/lib/mysql
+    restart: always
+
+  pricedb:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: pricedatabase
+      MYSQL_USER: data
+      MYSQL_PASSWORD: data
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3308:3306"
+    volumes:
+      - pricedb-data:/var/lib/mysql
+    restart: always
+
+  stockdb:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: stockdatabase
+      MYSQL_USER: data
+      MYSQL_PASSWORD: data
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3309:3306"
+    volumes:
+      - stockdb-data:/var/lib/mysql
     restart: always
 
   adminer:
@@ -20,4 +59,7 @@ services:
       - "8084:8080"
 
 volumes:
-  db-data:
+  authenticationdb-data:
+  discusstiondb-data:
+  pricedb-data:
+  stockdb-data:

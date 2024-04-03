@@ -52,9 +52,18 @@ docker-compose up -d
 
 ### 데이터베이스 접속
 - **URL:** localhost:8084
-- **Database:** mydatabase
-- **ID:** user
-- **Password:** password
+- **Database:** authenticationdb
+  - **ID:** data
+  - **Password:** data
+- **Database:** dicussiondb
+  - **ID:** data
+  - **Password:** data
+- **Database:** pricedb
+    - **ID:** data
+    - **Password:** data
+- **Database:** stockdb
+    - **ID:** data
+    - **Password:** data
 
 ## 📊 ERD 설계
 ![img.png](img.png)
