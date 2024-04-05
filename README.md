@@ -43,13 +43,13 @@
 ```bash
 # 소스 코드 클론하기
 git clone https://github.com/choihyunjun123/stock-talk
+cd stock-talk # 클론한 디렉토리로 이동
 
 # Docker Compose를 사용하여 필요한 서비스 실행하기
-cd [프로젝트 디렉토리]
 docker-compose up -d
 
 # 애플리케이션 빌드 및 실행
-./gradlew build clean
+./gradlew build
 ./gradlew bootRun
 ```
 
